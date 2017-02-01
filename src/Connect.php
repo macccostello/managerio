@@ -1,6 +1,6 @@
 <?php 
 
-namespace Managerio/Connect;
+namespace Managerio;
 
 //use GuzzleHttp\Client as GuzzleClient;
 	
