@@ -1,0 +1,15 @@
+{
+    "name": "kennethmervin01/managerio",
+    "description": "API client for Manager.io(PHP)",
+    "authors": [
+        {
+            "name": "Kenneth Mervin Enriquez",
+            "email": "kennethmervinenriquez@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload":{
+        "psr-4": {"Managerio\\": "src/"}
+    }
+}
