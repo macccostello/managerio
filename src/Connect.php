@@ -2,15 +2,15 @@
 
 namespace Managerio;
 
-//use GuzzleHttp\Client as GuzzleClient;
+use GuzzleHttp\Client as GuzzleClient;
 	
 class Connect {
-	public  $username = "administrator";
+	public  $username = "administrator"; 
 	public  $password = "mcdo1234";
-	public  $home     = "https://kmea.manager.io/api"; 
-	public  $base_uri = "https://kmea.manager.io/api/"; 
-	public  $business = "CMA";
-	public  $businessID = "4179a249-2665-46b1-be61-6c63b9ed2aee";  
+	public  $home     = "http://ec2-54-202-145-45.us-west-2.compute.amazonaws.com/api"; 
+	public  $base_uri = "http://ec2-54-202-145-45.us-west-2.compute.amazonaws.com/api/"; 
+	public  $business = "CMA Ortigas Branch";
+	public  $businessID = "6bcc2740-8920-4055-a7ae-951fac5ab194";  
 	public function __construct($auth){
 		if($auth != "default"){
 			$this->username   =  $auth['username'];
