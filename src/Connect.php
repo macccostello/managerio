@@ -117,7 +117,7 @@ class Connect {
 
 	public function put($uri,$data){
 		$client = $this->client();
-		$response = $client->request('PUT', $uri, $data);
+		$response = $client->request('PUT',$uri, $data);
 		return $response->getStatusCode();
 	}
 
@@ -153,7 +153,7 @@ class Connect {
 		$header   = $response->getHeaders();  
 		return $header['Location']; // new loacation id of added customer
 	}
-	
+
 	// Get Customer
 	public function getCustomer($customerkey){
 		$customer = $this->get($this->keyLink("Home","/$customerkey.json"));
