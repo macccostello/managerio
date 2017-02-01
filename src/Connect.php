@@ -147,19 +147,13 @@ class Connect {
 	}
 	
 	// Add Customer
-	public function addCustomer(){
-		$data['json'] =  array(
-				"Name" => "Bruce Wayne XXIX",
-		  		"BillingAddress" => "Gotham",
-		  		"Email" =>  "baty4@gmail.com",
-		  		"BusinessIdentifier" =>  "001 001 511",
-		  		"StartingBalanceType" => "Credit"
-			);
+	public function addCustomer($array){
+		$data['json'] =  $array;
 		$response = $this->post($this->keyLink("Customers"),$data);
 		$header   = $response->getHeaders();  
-		return $header['Location']; // must be 201
+		return $header['Location']; // new loacation id of added customer
 	}
-
+	
 	// Get Customer
 	public function getCustomer($customerkey){
 		$customer = $this->get($this->keyLink("Home","/$customerkey.json"));
