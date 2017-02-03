@@ -27,12 +27,6 @@ class Connect {
 		return $client;
 	}
 
-	public function gclient(){
-		$client   = new Client();
-		$gzclient = new GuzzleClient(['base_uri' => $this->base_uri, 'auth' => [$this->username,$this->password]]);
-		$gclient = $client->setClient($gzclient); 
-		return $gclient;
-	}
 
 	// set $uri = uri you want to retrieve , $requestResult = Result you want to retrieve 
 	public function get($uri="", $requestResult="array"){
@@ -43,6 +37,20 @@ class Connect {
 		return $result;
 	} 
 
+
+	//Post
+	public function post($uri,$data){
+		$client = $this->client();
+		$request = $client->request('POST', $uri, $data);	
+		return $request;
+	}
+
+	//Put
+	public function put($uri,$data){
+		$client = $this->client();
+		$response = $client->request('PUT',$uri, $data);
+		return $response->getStatusCode();
+	}
 
 	// result from response 
 	public function requestResult($response,$requestResult="default"){
@@ -84,43 +92,6 @@ class Connect {
 		}
 		return $result;
 	}
-
-
-	// Get  Object collection   	
-	public function objectCollection(){
-		$collection = $this->get($this->businessID);
-		return $collection['Body'];
-	} 
-
-
-	// objectid = id of the object you want to retrieve	
-	public function theObject($objectid){
-		$url = $this->businessID."/".$objectid;
-	} 
-
-	// objectid = id of the object you want to retrieve. Using this method will  return  array key of result.  
-	public function getObjectKeys($objectid){
-		$url = $this->businessID."/".$objectid."/index.json";
-		$object = $this->get($url,"Body");
-		return json_decode($object);
-	} 
-	// Object data and  links 
-
-
-	// Post
-	public function post($uri,$data){
-		$client = $this->client();
-		$request = $client->request('POST', $uri, $data);	
-		return $request;
-	}
-
-
-	public function put($uri,$data){
-		$client = $this->client();
-		$response = $client->request('PUT',$uri, $data);
-		return $response->getStatusCode();
-	}
-
 
 	// Key Links 
 	public function keyLink($name,$uri=""){
@@ -172,6 +143,4 @@ class Connect {
 		$status = $this->put($this->keyLink("Home","/$customerkey.json"),$data);
 		return $status; //  must be 200
 	}
-
-
 }
