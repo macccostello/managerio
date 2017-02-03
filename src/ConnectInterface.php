@@ -1,8 +1,8 @@
 <?php 
 
-namespace Managerio\ApiInterface;
+namespace Managerio;
 
-interface Connect{
+interface Connector{
 
 	public $username;
 	public $password;
@@ -22,5 +22,4 @@ interface Connect{
 	public function requestResult($response,$requestResult);
 
 	public function keyLink($name,$uri);
-
 }
