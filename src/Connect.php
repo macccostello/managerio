@@ -4,7 +4,7 @@ namespace Managerio;
 use GuzzleHttp\Client as GuzzleClient;
 use Managerio\ConnectInterface;
 
-class Connect implements Connect{
+class Connect implements ConnectInterface{
 	public  $username = "administrator"; 
 	public  $password = "mcdo1234";
 	public  $home     = "http://ec2-54-202-145-45.us-west-2.compute.amazonaws.com/api"; 
