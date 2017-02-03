@@ -29,8 +29,8 @@ require 'vendor/autoload.php';
 $auth = array(
 	"username" =>  "yourusername", 
 	"password" =>  "yourpassword", 
-	"home"     =>  "http://yourUrl/api",
-	"base_uri" =>  "http://yourUrl/api/",
+	"home"     =>  "http://sample.manager.io/api",
+	"base_uri" =>  "http://sample.manager.io/api/",
 	"business" =>  "yourBusinessName",
 	"businessID" => "yourBusinessID"   
 );
