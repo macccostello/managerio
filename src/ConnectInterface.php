@@ -2,14 +2,7 @@
 
 namespace Managerio;
 
-interface Connector{
-
-	public $username;
-	public $password;
-	public $home;
-	public $base_uri;
-	public $business;
-	public $businessID;
+interface ConnectInterface{
 
 	public function client();
 

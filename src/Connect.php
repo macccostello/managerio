@@ -2,7 +2,7 @@
 
 namespace Managerio;
 use GuzzleHttp\Client as GuzzleClient;
-use Managerio\ApiInterface\Connect;
+use Managerio\ConnectInterface;
 
 class Connect implements Connect{
 	public  $username = "administrator"; 
