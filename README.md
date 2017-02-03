@@ -23,10 +23,8 @@ After installing, you need to require Composer's autoloader:
 require 'vendor/autoload.php';
 ```
 
-# Sample Usage
+# Basic Usage
 ``` php
-use Managerio\Connect;
-
 // Set credential
 $auth = array(
 	"username" =>  "yourusername", 
@@ -37,18 +35,11 @@ $auth = array(
 	"businessID" => "yourBusinessID"   
 );
 // Connect to your server
-$test = new Connect($auth);
-
+$server = new Managerio\Connect($auth);
 
 // sample array to add customer
-$customer = array(
-				"Name" => "Bruce Wayne XXIX",
-		  		"BillingAddress" => "Gotham",
-		  		"Email" =>  "baty4@gmail.com",
-		  		"BusinessIdentifier" =>  "001 001 511",
-		  		"StartingBalanceType" => "Credit"
-);
+$customer = array("Name" => "Bruce Wayne XXIX","BillingAddress" => "Gotham","Email" =>  "baty4@gmail.com","BusinessIdentifier" =>  "001 001 511","StartingBalanceType" => "Credit");
 
 //Add Customer
-$test->addCustomer($customer);
+$server->addCustomer($customer);
 ```
